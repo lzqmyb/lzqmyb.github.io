@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My blog is awesome</title>
-    <link>http://example.com/</link>
+    <link>http://lzqmyb.coding.me/</link>
     <description>Recent content on My blog is awesome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     <copyright>All rights reserved - 2015</copyright>
     <lastBuildDate>Sun, 23 Jul 2017 23:16:57 +0800</lastBuildDate>
     
-	<atom:link href="http://example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lzqmyb.coding.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Good To Great</title>
-      <link>http://example.com/post/good-to-great/</link>
+      <link>http://lzqmyb.coding.me/post/good-to-great/</link>
       <pubDate>Sun, 23 Jul 2017 23:16:57 +0800</pubDate>
       
-      <guid>http://example.com/post/good-to-great/</guid>
+      <guid>http://lzqmyb.coding.me/post/good-to-great/</guid>
       <description>haha</description>
     </item>
     
