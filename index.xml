@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Sun, 23 Jul 2017 23:16:57 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jul 2017 11:09:51 +0800</lastBuildDate>
     
 	<atom:link href="http://lzqmyb.coding.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jenkins 搭建初级</title>
+      <link>http://lzqmyb.coding.me/post/2/</link>
+      <pubDate>Tue, 25 Jul 2017 11:09:51 +0800</pubDate>
+      
+      <guid>http://lzqmyb.coding.me/post/2/</guid>
+      <description> 下载  官网下载jenkins.war包 下载java jre 配置环境变量  启动  运行java jenkins.war &amp;ndash;httpPort=yourport  配置 问题  执行shell时会遇到权限问题
+ 妥协了切换成root用户执行jenkins了 用普通用户是可以的，只是需要更多的时间，失了耐心  插件列表中的插件太新，不能兼容老旧的gitlab
+ 上传插件遇到Nginx 上传文件过大的问题
+ 通过在 jenkins插件下载 中下载插件到服务器的jenkins/plugins目录下重启jenkins,插件安装成功   </description>
+    </item>
     
     <item>
       <title>It&#39;s time to sleep</title>
