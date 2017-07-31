@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="jenkins 搭建初级"/>
+<meta name="twitter:title" content="Ansible"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="jenkins 搭建初级 &middot; To be Better" />
+  	<meta property="og:title" content="Ansible &middot; To be Better" />
   	<meta property="og:site_name" content="To be Better" />
-  	<meta property="og:url" content="http://lzqmyb.coding.me/post/2/" />
+  	<meta property="og:url" content="http://lzqmyb.coding.me/post/3/" />
 
     
         
@@ -31,16 +31,16 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2017-07-25T11:09:51&#43;08:00" />
+    <meta property="article:published_time" content="2017-07-31T13:42:46&#43;08:00" />
 
     
     
 
-    <title>jenkins 搭建初级 &middot; To be Better</title>
+    <title>Ansible &middot; To be Better</title>
 
     
-    <meta name="description" content=" 下载  官网下载jenkins.war包 下载java jre 配置环境变量  启动  运行java jenkins.war &amp;ndash;httpPort=yourport  配置 问题  执行shell时会遇到权限问题
- 妥协了切换成root用户执行jenkins了 用普通用户是可以的，只是需要更多的时间，失了耐" />
+    <meta name="description" content=" 主机环境 centOS7.2 python2.7
+Installation  centOS环境需要先配置EPEL: yum install epel-release 然后再安装ansible: sudo yum install ansible 参考资料Ansible中文权威指南  New Driver to load" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -69,7 +69,7 @@
     
     <meta name="generator" content="Hugo 0.25.1" />
 
-    <link rel="canonical" href="http://lzqmyb.coding.me/post/2/" />
+    <link rel="canonical" href="http://lzqmyb.coding.me/post/3/" />
 
     
       
@@ -108,23 +108,23 @@
         "description": Familiar Stranger
         
     },
-    "headline": jenkins 搭建初级,
-    "name": jenkins 搭建初级,
-    "wordCount": 20,
+    "headline": Ansible,
+    "name": Ansible,
+    "wordCount": 19,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": http://lzqmyb.coding.me/post/2/,
-    "datePublished": 2017-07-25T11:09Z,
-    "dateModified": 2017-07-25T11:09Z,
+    "url": http://lzqmyb.coding.me/post/3/,
+    "datePublished": 2017-07-31T13:42Z,
+    "dateModified": 2017-07-31T13:42Z,
     
     
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": http://lzqmyb.coding.me/post/2/
+        "@id": http://lzqmyb.coding.me/post/3/
     }
 }
     </script>
@@ -194,13 +194,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">jenkins 搭建初级</h1>
+        <h1 class="post-title">Ansible</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-07-25T11:09:51&#43;08:00">
-            Jul 25, 2017
+          <time class="post-date" datetime="2017-07-31T13:42:46&#43;08:00">
+            Jul 31, 2017
           </time>
         
          
@@ -210,38 +210,25 @@
     <section class="post-content">
       
 
-<h1 id="下载">下载</h1>
+<h1 id="主机环境">主机环境</h1>
+
+<p>centOS7.2
+python2.7</p>
+
+<h1 id="installation">Installation</h1>
 
 <ul>
-<li>官网下载<a href="http://updates.jenkins-ci.org/download/war/">jenkins.war</a>包</li>
-<li>下载java jre 配置环境变量</li>
+<li>centOS环境需要先配置EPEL:
+yum install epel-release</li>
+<li>然后再安装ansible:
+sudo yum install ansible</li>
+<li><a href="http://www.ansible.com.cn/docs/intro_installation.html">参考资料Ansible中文权威指南</a></li>
 </ul>
 
-<h1 id="启动">启动</h1>
+<h1 id="new-driver-to-load">New Driver to load</h1>
 
 <ul>
-<li>运行java jenkins.war &ndash;httpPort=yourport</li>
-</ul>
-
-<h1 id="配置">配置</h1>
-
-<h2 id="问题">问题</h2>
-
-<ul>
-<li><p>执行shell时会遇到权限问题</p>
-
-<ul>
-<li>妥协了切换成root用户执行jenkins了</li>
-<li>用普通用户是可以的，只是需要更多的时间，失了耐心</li>
-</ul></li>
-
-<li><p>插件列表中的插件太新，不能兼容老旧的gitlab</p></li>
-
-<li><p>上传插件遇到Nginx 上传文件过大的问题</p>
-
-<ul>
-<li>通过在 <a href="http://updates.jenkins-ci.org/download/plugins/">jenkins插件下载</a> 中下载插件到服务器的jenkins/plugins目录下重启jenkins,插件安装成功</li>
-</ul></li>
+<li><a href="http://www.ansible.com.cn/docs/intro_getting_started.html#gs-about">新手上路TODO</a></li>
 </ul>
 
     </section>
@@ -281,19 +268,19 @@
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=jenkins%20%e6%90%ad%e5%bb%ba%e5%88%9d%e7%ba%a7&nbsp;-&nbsp;To%20be%20Better&amp;url=http%3a%2f%2flzqmyb.coding.me%2fpost%2f2%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Ansible&nbsp;-&nbsp;To%20be%20Better&amp;url=http%3a%2f%2flzqmyb.coding.me%2fpost%2f3%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flzqmyb.coding.me%2fpost%2f2%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flzqmyb.coding.me%2fpost%2f3%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flzqmyb.coding.me%2fpost%2f2%2f&amp;description=jenkins%20%e6%90%ad%e5%bb%ba%e5%88%9d%e7%ba%a7"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flzqmyb.coding.me%2fpost%2f3%2f&amp;description=Ansible"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flzqmyb.coding.me%2fpost%2f2%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flzqmyb.coding.me%2fpost%2f3%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -310,8 +297,8 @@
 
 
 var disqus_config = function () {
-this.page.url = "http:\/\/lzqmyb.coding.me\/post\/2\/";  
-this.page.identifier = "http:\/\/lzqmyb.coding.me\/post\/2\/"; 
+this.page.url = "http:\/\/lzqmyb.coding.me\/post\/3\/";  
+this.page.identifier = "http:\/\/lzqmyb.coding.me\/post\/3\/"; 
 };
 
 (function() { 
@@ -338,17 +325,10 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="http://lzqmyb.coding.me/post/3/">
-          <section class="post">
-              <h2>Ansible</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="http://lzqmyb.coding.me/post/1/">
+      <a class="read-next-story prev" style="no-cover" href="http://lzqmyb.coding.me/post/2/">
           <section class="post">
-              <h2>It&#39;s time to sleep</h2>
+              <h2>jenkins 搭建初级</h2>
           </section>
       </a>
   
