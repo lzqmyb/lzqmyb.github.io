@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.20.2">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>It&#39;s time to sleep</title>
+    <title>TCP/IP详解卷 读书笔记</title>
     <meta name="author" content="Lzqmyb">
     <meta name="keywords" content="">
 
@@ -31,15 +31,18 @@
     
 
     
-    <meta name="description" content="明天一定是一个起舞的日子">
-    <meta property="og:description" content="明天一定是一个起舞的日子">
+    <meta name="description" content="TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础
+概述 1.2 分层  在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并不提供任何可靠性保证。而另一方面, T C P 在不可 靠的 I P 层 上 提 供 了 一 个 可 靠 的 运 输 层 。 为 了 提 供 这 种 可 靠 的 服 务 , T C P 采 用 了 超 时 重 传 、 发 送和接收端到端的确认分组等机制。由此可见,运输层和网络层分别负责不同的功能。  3.">
+    <meta property="og:description" content="TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础
+概述 1.2 分层  在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并不提供任何可靠性保证。而另一方面, T C P 在不可 靠的 I P 层 上 提 供 了 一 个 可 靠 的 运 输 层 。 为 了 提 供 这 种 可 靠 的 服 务 , T C P 采 用 了 超 时 重 传 、 发 送和接收端到端的确认分组等机制。由此可见,运输层和网络层分别负责不同的功能。  3.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="It&#39;s time to sleep">
-    <meta property="og:url" content="/2017/07/its-time-to-sleep/">
+    <meta property="og:title" content="TCP/IP详解卷 读书笔记">
+    <meta property="og:url" content="/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
     <meta property="og:site_name" content="Hugo tranquilpeak theme">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Hugo tranquilpeak theme">
-    <meta name="twitter:description" content="明天一定是一个起舞的日子">
+    <meta name="twitter:description" content="TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础
+概述 1.2 分层  在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并不提供任何可靠性保证。而另一方面, T C P 在不可 靠的 I P 层 上 提 供 了 一 个 可 靠 的 运 输 层 。 为 了 提 供 这 种 可 靠 的 服 务 , T C P 采 用 了 超 时 重 传 、 发 送和接收端到端的确认分组等机制。由此可见,运输层和网络层分别负责不同的功能。  3.">
     
     
 
@@ -211,14 +214,14 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      It&#39;s time to sleep
+      TCP/IP详解卷 读书笔记
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-07-23T23:16:57&#43;08:00">
+    <time itemprop="datePublished" datetime="2017-09-06T11:37:42&#43;08:00">
       
-  七月 23, 2017
+  九月 6, 2017
 
     </time>
   
@@ -230,7 +233,48 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>明天一定是一个起舞的日子</p>
+              
+
+<h1 id="tcp-ip详解卷-读书笔记">TCP/IP详解卷 读书笔记</h1>
+
+<h2 id="为什么要看">为什么要看</h2>
+
+<p>这是互联网的基础，web开发者基础</p>
+
+<h2 id="概述">概述</h2>
+
+<h3 id="1-2-分层">1.2 分层</h3>
+
+<p><img src="http://op21eh6y8.bkt.clouddn.com/luyoulinajiewangluo.png" alt="通过路由器连接的两个网络" /></p>
+
+<ul>
+<li>在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并不提供任何可靠性保证。而另一方面, T C P 在不可 靠的 I P 层 上 提 供 了 一 个 可 靠 的 运 输 层 。 为 了 提 供 这 种 可 靠 的 服 务 , T C P 采 用 了 超 时 重 传 、 发 送和接收端到端的确认分组等机制。由此可见,运输层和网络层分别负责不同的功能。</li>
+</ul>
+
+<h3 id="3-2-ip-首部">3.2 IP 首部</h3>
+
+<p><img src="http://op21eh6y8.bkt.clouddn.com/ip%E6%95%B0%E6%8D%AE%E6%8A%A5.png" alt="" /></p>
+
+<ul>
+<li>1 Byte(字节) = 8 bit(位)</li>
+</ul>
+
+<h2 id="7-ping-程序">7 Ping 程序</h2>
+
+<ul>
+<li>Ping程序发送ICMP报文，然后等待报文返回，主要是用来判断某一台主机是否能访问。</li>
+</ul>
+
+<h2 id="8-traceroute">8 traceroute</h2>
+
+<ul>
+<li>使用ICMP报文和IP首部中的TTL字段（生命周期），利用TTL的机制（TTL每经过一个路由值自减1，当值为1或0时，路由将不对该报文进行转发将其丢弃，并给信源机发一份ICMP“超时”信息），来查看请求经过的路由器</li>
+<li>反向使用，返回的路由路径不一定相同</li>
+</ul>
+
+<h2 id="9-ip-选路">9 IP 选路</h2>
+
+<p><em>第一遍粗读，未完待续</em></p>
 
               
             </div>
@@ -245,7 +289,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/" data-tooltip="jenkins 搭建初级">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -253,7 +297,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/ansible/" data-tooltip="Ansible">
           
             <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
             <i class="fa fa-angle-right"></i>
@@ -270,17 +314,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2017%2f07%2fits-time-to-sleep%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f07%2fits-time-to-sleep%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f07%2fits-time-to-sleep%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -326,7 +370,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/" data-tooltip="jenkins 搭建初级">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -334,7 +378,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/ansible/" data-tooltip="Ansible">
           
             <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
             <i class="fa fa-angle-right"></i>
@@ -351,17 +395,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2017%2f07%2fits-time-to-sleep%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f07%2fits-time-to-sleep%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f07%2fits-time-to-sleep%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -388,17 +432,17 @@
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f2017%2f07%2fits-time-to-sleep%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
         <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f07%2fits-time-to-sleep%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
         <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f07%2fits-time-to-sleep%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f09%2ftcp%2fip%25E8%25AF%25A6%25E8%25A7%25A3%25E5%258D%25B7-%25E8%25AF%25BB%25E4%25B9%25A6%25E7%25AC%2594%25E8%25AE%25B0%2f">
         <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
       </a>
     </li>
@@ -613,9 +657,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/2017\/07\/its-time-to-sleep\/';
+          this.page.url = '\/2017\/09\/tcp\/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0\/';
           
-            this.page.identifier = '\/2017\/07\/its-time-to-sleep\/'
+            this.page.identifier = '\/2017\/09\/tcp\/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0\/'
           
         };
         (function() {
