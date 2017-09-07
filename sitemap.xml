@@ -2,43 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lzqmyb.coding.me/post/3/</loc>
+    <loc>/2017/07/ansible/</loc>
     <lastmod>2017-07-31T13:42:46+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/post/2/</loc>
+    <loc>/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</loc>
     <lastmod>2017-07-25T11:09:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/post/1/</loc>
+    <loc>/2017/07/its-time-to-sleep/</loc>
     <lastmod>2017-07-23T23:16:57+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/post/message/</loc>
+    <loc>/1/01/</loc>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/categories/</loc>
+    <loc>/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/post/</loc>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2017-07-31T13:42:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/tags/</loc>
+    <loc>/post/</loc>
+    <lastmod>2017-07-31T13:42:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lzqmyb.coding.me/</loc>
-    <lastmod>2017-07-31T13:42:46+08:00</lastmod>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   
