@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>life log</title>
-    <link>Hugo%20tranquilpeak%20theme/</link>
-    <description>Recent content on life log</description>
+    <title>Hugo tranquilpeak theme</title>
+    <link>/</link>
+    <description>Recent content on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Sep 2017 11:37:42 +0800</lastBuildDate>
     
-	<atom:link href="Hugo%20tranquilpeak%20theme/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TCP/IP详解卷 读书笔记</title>
-      <link>Hugo%20tranquilpeak%20theme/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 06 Sep 2017 11:37:42 +0800</pubDate>
       
-      <guid>Hugo%20tranquilpeak%20theme/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础
 概述 1.2 分层  在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并不提供任何可靠性保证。而另一方面, T C P 在不可 靠的 I P 层 上 提 供 了 一 个 可 靠 的 运 输 层 。 为 了 提 供 这 种 可 靠 的 服 务 , T C P 采 用 了 超 时 重 传 、 发 送和接收端到端的确认分组等机制。由此可见,运输层和网络层分别负责不同的功能。  3.</description>
     </item>
     
     <item>
       <title>Ansible</title>
-      <link>Hugo%20tranquilpeak%20theme/2017/07/ansible/</link>
+      <link>/2017/07/ansible/</link>
       <pubDate>Mon, 31 Jul 2017 13:42:46 +0800</pubDate>
       
-      <guid>Hugo%20tranquilpeak%20theme/2017/07/ansible/</guid>
+      <guid>/2017/07/ansible/</guid>
       <description>主机环境 centOS7.2 python2.7
 Installation  centOS环境需要先配置EPEL: yum install epel-release 然后再安装ansible: sudo yum install ansible 参考资料Ansible中文权威指南  New Driver to load  新手上路TODO  参考文档 开源自动化配置管理工具ansible、saltstack、Puppet、Chef选择</description>
     </item>
     
     <item>
       <title>jenkins 搭建初级</title>
-      <link>Hugo%20tranquilpeak%20theme/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</link>
+      <link>/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</link>
       <pubDate>Tue, 25 Jul 2017 11:09:51 +0800</pubDate>
       
-      <guid>Hugo%20tranquilpeak%20theme/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</guid>
+      <guid>/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</guid>
       <description> 下载  官网下载jenkins.war包 下载java jre 配置环境变量  启动  运行java jenkins.war &amp;ndash;httpPort=yourport  配置 问题  执行shell时会遇到权限问题
  妥协了切换成root用户执行jenkins了 用普通用户是可以的，只是需要更多的时间，失了耐心  插件列表中的插件太新，不能兼容老旧的gitlab
  上传插件遇到Nginx 上传文件过大的问题
@@ -45,19 +45,19 @@ Installation  centOS环境需要先配置EPEL: yum install epel-release 然后�
     
     <item>
       <title>It&#39;s time to sleep</title>
-      <link>Hugo%20tranquilpeak%20theme/2017/07/its-time-to-sleep/</link>
+      <link>/2017/07/its-time-to-sleep/</link>
       <pubDate>Sun, 23 Jul 2017 23:16:57 +0800</pubDate>
       
-      <guid>Hugo%20tranquilpeak%20theme/2017/07/its-time-to-sleep/</guid>
+      <guid>/2017/07/its-time-to-sleep/</guid>
       <description>明天一定是一个起舞的日子</description>
     </item>
     
     <item>
       <title></title>
-      <link>Hugo%20tranquilpeak%20theme/1/01/</link>
+      <link>/1/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>Hugo%20tranquilpeak%20theme/1/01/</guid>
+      <guid>/1/01/</guid>
       <description>第一本Docker书 第一章 简介 1.1.1 提供一个简单轻量的建模方式  docker及其简洁，全部环境一台安装了肩同版本的Linux内核和二进制文件最小限的宿主机
  大多数docker容器只需要不到1秒钟即可启动
  由于去除了管理程序的开销，docker容器拥有很高大的性能，充分的利用资源
@@ -66,10 +66,10 @@ Installation  centOS环境需要先配置EPEL: yum install epel-release 然后�
     
     <item>
       <title></title>
-      <link>Hugo%20tranquilpeak%20theme/1/01/</link>
+      <link>/1/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>Hugo%20tranquilpeak%20theme/1/01/</guid>
+      <guid>/1/01/</guid>
       <description> 我的消息列表    METHOD URI     GET /messages    参数    NAME POSITION TYPE RESTRAINT DESC     X-Auth-Token Header String 必填 用户Token    响应 { &amp;quot;data&amp;quot;: [ { &amp;quot;shareMessage&amp;quot;: { &amp;quot;title&amp;quot;: &amp;quot;分享消息分享标题&amp;quot;, &amp;quot;content&amp;quot;: &amp;quot;分享消息分享内容&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;https://www.baidu.com&amp;quot;, &amp;quot;avatar&amp;quot;: &amp;quot;http://img2.tuicool.com/vIVVBnu.png!web&amp;quot;, &amp;quot;id&amp;quot;: &amp;quot;@RB9bg&amp;quot;, &amp;quot;createdAt&amp;quot;: &amp;quot;2017-09-05 15:03:54&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;ShareMessage&amp;quot; }, &amp;quot;type&amp;quot;: &amp;quot;system&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;标题&amp;quot;, &amp;quot;content&amp;quot;: &amp;quot;内容&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;http://img2.tuicool.com/vIVVBnu.png!web&amp;quot;, &amp;quot;read&amp;quot;: false, &amp;quot;createPush&amp;quot;: true, &amp;quot;pushTitle&amp;quot;: &amp;quot;标题&amp;quot;, &amp;quot;pushContent&amp;quot;: &amp;quot;内容&amp;quot;, &amp;quot;id&amp;quot;: &amp;quot;@WBqpX&amp;quot;, &amp;quot;createdAt&amp;quot;: &amp;quot;2017-09-05 15:03:54&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;Message&amp;quot;, &amp;quot;userId&amp;quot;: &amp;quot;18894&amp;quot;, &amp;quot;shareMessageId&amp;quot;: &amp;quot;@RB9bg&amp;quot; } ] }  </description>
     </item>
     
