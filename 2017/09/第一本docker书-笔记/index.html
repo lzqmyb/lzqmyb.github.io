@@ -528,6 +528,73 @@
 <h4 id="4-5-10-dockerfile指令">4.5.10 Dockerfile指令</h4>
 
 <ul>
+<li>CMD：
+
+<ul>
+<li>指定容器要运行时执行的命令</li>
+<li>如果在docker run 时添加了执行命令，该字段失效</li>
+</ul></li>
+<li>ENTRYPOINT
+
+<ul>
+<li>类似于CMD</li>
+<li>可以接受docker run传入的参数（docker run -t -i docker/study:v1 -g &ldquo;daemon off;&ldquo;）</li>
+<li>ENTRYPOINT 可以和CMD公用</li>
+<li>ENTRYPOINT [&ldquo;/usr/sbin/nginx&rdquo;]; CMD [&ldquo;-h&rdquo;]</li>
+<li>可以使用 &ndash;entrypoint标志覆盖该命令</li>
+</ul></li>
+<li>WORKDIR
+
+<ul>
+<li>WORKDIR /opt/webapp/db</li>
+<li>指定改字段的值后，会使ENTRYPOINT与CMD在指定目录执行</li>
+<li>可以为容器设置最终工作目录</li>
+<li>可以设置多次</li>
+<li>可以通过-w参数覆盖最终工作目录的设置</li>
+</ul></li>
+<li>ENV
+
+<ul>
+<li>ENV RVM_PATH /home/rvm/</li>
+<li>WORKDIR $RVM_PATH</li>
+<li>在镜像构建过程总设置环境变量</li>
+<li>可以通过环境变量前加上一个反斜杠进行转义</li>
+<li>可以通过启动容器是-e 指定，该指定只会作用于运行时</li>
+</ul></li>
+<li>USER
+
+<ul>
+<li>用来指定镜像会以什么样的用户去运行</li>
+<li>启动容器时增加-u 可以覆盖该值</li>
+<li>如果不指定默认是root用户</li>
+</ul></li>
+<li>VOLUME
+
+<ul>
+<li>VOLUME [&ldquo;/opt/project&rdquo;, &ldquo;/data&rdquo;] 可以逗号分隔指定多个卷</li>
+<li>卷可以将内容添加到镜像中，而不是将这些内容提交到镜像中</li>
+</ul></li>
+<li>ADD
+
+<ul>
+<li>ADD software.lic /opt/application/software.lic</li>
+<li>将构建环境下的文件和目录复制到镜像中</li>
+<li>指向源文件的位置参数可以是一个URL，或者侯建上下文或环境中文件名或者目录</li>
+<li><em>不能对构建目录或者上下文之外的文件进行ADD操作</em></li>
+<li>会根据路径的最后一个字符是否是“/”来判断是目录或者文件</li>
+<li>如果将一个归档文件（gzip、bzip2、xz）指定为源文件，docker会自动将归档文件解开（unpack） ADD latest.tar.gz /var/www/wordpress/，解开行为和-x选项的tar命令一样</li>
+<li>如果URL方式指定源是归档文件，是不能解开的</li>
+<li>在归档情况下，如果目的目录中有与归档文件解开的文件或目录，那么位置中的文件或目录不会覆盖</li>
+<li>如果目的目录不存在，则创建这个全路径，新创建的文件和目录的模式为0755， 并且UID和GID都是0</li>
+<li>ADD命令会使构建缓存变得无效，会使后续指令都不能继续使用之前的侯建缓存</li>
+</ul></li>
+<li>COPY
+
+<ul>
+<li>COPY conf.d/ /etc/apache2/</li>
+<li>和ADD很像，不会做提取工作</li>
+<li>和ADD一样 源以&rdquo;/&ldquo;结尾，会将目录复制过去，否则当做文件</li>
+</ul></li>
 <li>ONBUILD
 
 <ul>
