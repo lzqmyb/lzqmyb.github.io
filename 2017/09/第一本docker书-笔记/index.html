@@ -638,6 +638,18 @@
 
 <h3 id="5-2-使用docker构建并测试web应用">5.2 使用Docker构建并测试web应用</h3>
 
+<ul>
+<li>docker run -p 1338 &ndash;name webapp &ndash;link redis:db -t -i -v $PWD/webapp:/opt/webapp image /bin/bash</li>
+<li>&ndash;link 创建了两个容器之间的父子链接</li>
+<li>可以增加 &ndash;ioc=false标志，关闭所有没有连接的容器间的通信。</li>
+<li>&ndash;linx 在docker 父容器中两个地方写入了链接信息
+
+<ul>
+<li>/etc/hosts 文件中</li>
+<li>包含链接信息的环境变量中，可以同过env查看</li>
+</ul></li>
+</ul>
+
 <h1 id="备注">备注</h1>
 
 <p>什么意思？ ： 代表问题，需要了解</p>
