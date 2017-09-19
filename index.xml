@@ -70,6 +70,15 @@ Installation  centOS环境需要先配置EPEL: yum install epel-release 然后�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/1/01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/</guid>
       <description> 我的消息列表    METHOD URI     GET /messages    参数    NAME POSITION TYPE RESTRAINT DESC     X-Auth-Token Header String 必填 用户Token    响应 { &amp;quot;data&amp;quot;: [ { &amp;quot;shareMessage&amp;quot;: { &amp;quot;title&amp;quot;: &amp;quot;分享消息分享标题&amp;quot;, &amp;quot;content&amp;quot;: &amp;quot;分享消息分享内容&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;https://www.baidu.com&amp;quot;, &amp;quot;avatar&amp;quot;: &amp;quot;http://img2.tuicool.com/vIVVBnu.png!web&amp;quot;, &amp;quot;id&amp;quot;: &amp;quot;@RB9bg&amp;quot;, &amp;quot;createdAt&amp;quot;: &amp;quot;2017-09-05 15:03:54&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;ShareMessage&amp;quot; }, &amp;quot;type&amp;quot;: &amp;quot;system&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;标题&amp;quot;, &amp;quot;content&amp;quot;: &amp;quot;内容&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;http://img2.tuicool.com/vIVVBnu.png!web&amp;quot;, &amp;quot;read&amp;quot;: false, &amp;quot;createPush&amp;quot;: true, &amp;quot;pushTitle&amp;quot;: &amp;quot;标题&amp;quot;, &amp;quot;pushContent&amp;quot;: &amp;quot;内容&amp;quot;, &amp;quot;id&amp;quot;: &amp;quot;@WBqpX&amp;quot;, &amp;quot;createdAt&amp;quot;: &amp;quot;2017-09-05 15:03:54&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;Message&amp;quot;, &amp;quot;userId&amp;quot;: &amp;quot;18894&amp;quot;, &amp;quot;shareMessageId&amp;quot;: &amp;quot;@RB9bg&amp;quot; } ] }  </description>
     </item>
     
