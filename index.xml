@@ -1,22 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life Log</title>
+    <title>life log</title>
     <link>/</link>
-    <description>Recent content on Life Log</description>
+    <description>Recent content on life log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 12 Sep 2017 13:42:46 +0800</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2017 14:41:57 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>k8s 学习</title>
+      <link>/post/2017/11/15/k8s-%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 15 Nov 2017 14:41:57 +0800</pubDate>
+      
+      <guid>/post/2017/11/15/k8s-%E5%AD%A6%E4%B9%A0/</guid>
+      <description>概念 kube-dns  解决的问题  不是kubernetes中必须安装的，但是推荐安装 虽然kubernetes中有service的概念，访问服务可以访问端口， 但是如果是一个app，一个db， 链接db时需要通过增加app查询ip的能力，需要重复的开发，修改应用 刚开始的做法采用了docker使用过的方法--环境变量。 每个pod启动时，会通过环境变量设置所有服务的ip与port， 这样pod中的应用可以启动时，读取环境变量来获取依赖服务的地址信息 ，但是，一个问题是，必须依赖服务先启动才可以正常使用 最理想的方案就是直接使用服务的名字，不需要关心它实际的ip，即dns系统。 kubernetes 也提供了这种功能   存在的形态  DNS服务不是独立的系统，是一种 addon 作为插件来安装，可以把它看做运行在集群上的应用。
+DNS 有两种配置方式: - 在1.3之前使用 etcd + kube2sky + skydns 的方式
+会有三个容器运行:
+etcd: 保存所有DNS数据
+kube2sky: 通过kubernetes API 监听 Service 的变化， 然后同步到 etcd
+skyDNS: 根据etcd中的数据，对外提供DNS查询服务
+ 在1.3之后可以使用 kubedns + dnsmasq 的方式  kubedns: 提供原来kube2sky + etcd + skyDNS 的功能，可以单独对外提供DNS查询服务
+dnsmasq: 轻量级的DNS服务软件， 可以提供DNS缓存功能。 kubeDNS模式下，dnsmasq正在内存这种预留一块大小1G（默认）的地方，保存当前最常用的DNS查询记录， 如果缓存中没有要查找的记录，就会到kubeDNS中查询，并把结果缓存起来.
+离线安装 环境  vagrant 虚拟三台机器 centos7.</description>
+    </item>
+    
+    <item>
+      <title>GTD 时间管理</title>
+      <link>/method/gtd/</link>
+      <pubDate>Mon, 13 Nov 2017 17:59:22 +0800</pubDate>
+      
+      <guid>/method/gtd/</guid>
+      <description> 时间管理 </description>
+    </item>
+    
+    <item>
+      <title>Collection</title>
+      <link>/post/2017/09/19/collection/</link>
+      <pubDate>Tue, 19 Sep 2017 13:42:46 +0800</pubDate>
+      
+      <guid>/post/2017/09/19/collection/</guid>
+      <description>体系化认识RPC</description>
+    </item>
+    
+    <item>
       <title>第一本Docker书 笔记</title>
-      <link>/2017/09/%E7%AC%AC%E4%B8%80%E6%9C%ACdocker%E4%B9%A6-%E7%AC%94%E8%AE%B0/</link>
+      <link>/post/2017/09/12/%E7%AC%AC%E4%B8%80%E6%9C%ACdocker%E4%B9%A6-%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 12 Sep 2017 13:42:46 +0800</pubDate>
       
-      <guid>/2017/09/%E7%AC%AC%E4%B8%80%E6%9C%ACdocker%E4%B9%A6-%E7%AC%94%E8%AE%B0/</guid>
+      <guid>/post/2017/09/12/%E7%AC%AC%E4%B8%80%E6%9C%ACdocker%E4%B9%A6-%E7%AC%94%E8%AE%B0/</guid>
       <description>第一本Docker书 第一章 简介 1.1.1 提供一个简单轻量的建模方式  docker及其简洁，全部环境一台安装了肩同版本的Linux内核和二进制文件最小限的宿主机
  大多数docker容器只需要不到1秒钟即可启动
  由于去除了管理程序的开销，docker容器拥有很高大的性能，充分的利用资源
@@ -25,30 +60,30 @@
     
     <item>
       <title>TCP/IP详解卷 读书笔记</title>
-      <link>/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>/post/2017/09/06/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 06 Sep 2017 11:37:42 +0800</pubDate>
       
-      <guid>/2017/09/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>/post/2017/09/06/tcp/ip%E8%AF%A6%E8%A7%A3%E5%8D%B7-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础
 概述 1.2 分层  在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并不提供任何可靠性保证。而另一方面, T C P 在不可 靠的 I P 层 上 提 供 了 一 个 可 靠 的 运 输 层 。 为 了 提 供 这 种 可 靠 的 服 务 , T C P 采 用 了 超 时 重 传 、 发 送和接收端到端的确认分组等机制。由此可见,运输层和网络层分别负责不同的功能。  3.</description>
     </item>
     
     <item>
       <title>Ansible</title>
-      <link>/2017/07/ansible/</link>
+      <link>/post/2017/07/31/ansible/</link>
       <pubDate>Mon, 31 Jul 2017 13:42:46 +0800</pubDate>
       
-      <guid>/2017/07/ansible/</guid>
+      <guid>/post/2017/07/31/ansible/</guid>
       <description>主机环境 centOS7.2 python2.7
 Installation  centOS环境需要先配置EPEL: yum install epel-release 然后再安装ansible: sudo yum install ansible 参考资料Ansible中文权威指南  New Driver to load  新手上路TODO  参考文档 开源自动化配置管理工具ansible、saltstack、Puppet、Chef选择</description>
     </item>
     
     <item>
       <title>jenkins 搭建初级</title>
-      <link>/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</link>
+      <link>/post/2017/07/25/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</link>
       <pubDate>Tue, 25 Jul 2017 11:09:51 +0800</pubDate>
       
-      <guid>/2017/07/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</guid>
+      <guid>/post/2017/07/25/jenkins-%E6%90%AD%E5%BB%BA%E5%88%9D%E7%BA%A7/</guid>
       <description> 下载  官网下载jenkins.war包 下载java jre 配置环境变量  启动  运行java jenkins.war &amp;ndash;httpPort=yourport  配置 问题  执行shell时会遇到权限问题
  妥协了切换成root用户执行jenkins了 用普通用户是可以的，只是需要更多的时间，失了耐心  插件列表中的插件太新，不能兼容老旧的gitlab
  上传插件遇到Nginx 上传文件过大的问题
@@ -57,29 +92,20 @@ Installation  centOS环境需要先配置EPEL: yum install epel-release 然后�
     
     <item>
       <title>It&#39;s time to sleep</title>
-      <link>/2017/07/its-time-to-sleep/</link>
+      <link>/post/2017/07/23/its-time-to-sleep/</link>
       <pubDate>Sun, 23 Jul 2017 23:16:57 +0800</pubDate>
       
-      <guid>/2017/07/its-time-to-sleep/</guid>
+      <guid>/post/2017/07/23/its-time-to-sleep/</guid>
       <description>明天一定是一个起舞的日子</description>
     </item>
     
     <item>
-      <title></title>
-      <link>/1/01/</link>
+      <title>Linux查看系统架构的5条常用命令</title>
+      <link>/post/1/01/01/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1/01/</guid>
+      <guid>/post/1/01/01/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/1/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/1/01/</guid>
-      <description> 我的消息列表    METHOD URI     GET /messages    参数    NAME POSITION TYPE RESTRAINT DESC     X-Auth-Token Header String 必填 用户Token    响应 { &amp;quot;data&amp;quot;: [ { &amp;quot;shareMessage&amp;quot;: { &amp;quot;title&amp;quot;: &amp;quot;分享消息分享标题&amp;quot;, &amp;quot;content&amp;quot;: &amp;quot;分享消息分享内容&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;https://www.baidu.com&amp;quot;, &amp;quot;avatar&amp;quot;: &amp;quot;http://img2.tuicool.com/vIVVBnu.png!web&amp;quot;, &amp;quot;id&amp;quot;: &amp;quot;@RB9bg&amp;quot;, &amp;quot;createdAt&amp;quot;: &amp;quot;2017-09-05 15:03:54&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;ShareMessage&amp;quot; }, &amp;quot;type&amp;quot;: &amp;quot;system&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;标题&amp;quot;, &amp;quot;content&amp;quot;: &amp;quot;内容&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;http://img2.tuicool.com/vIVVBnu.png!web&amp;quot;, &amp;quot;read&amp;quot;: false, &amp;quot;createPush&amp;quot;: true, &amp;quot;pushTitle&amp;quot;: &amp;quot;标题&amp;quot;, &amp;quot;pushContent&amp;quot;: &amp;quot;内容&amp;quot;, &amp;quot;id&amp;quot;: &amp;quot;@WBqpX&amp;quot;, &amp;quot;createdAt&amp;quot;: &amp;quot;2017-09-05 15:03:54&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;Message&amp;quot;, &amp;quot;userId&amp;quot;: &amp;quot;18894&amp;quot;, &amp;quot;shareMessageId&amp;quot;: &amp;quot;@RB9bg&amp;quot; } ] }  </description>
     </item>
     
   </channel>
