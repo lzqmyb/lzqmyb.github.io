@@ -102,7 +102,8 @@ dnsmasq: 轻量级的DNS服务软件， 可以提供DNS缓存功能。 kubeDNS�
 
 			<div class="post-content">
 				<p>主机环境 centOS7.2 python2.7
-Installation  centOS环境需要先配置EPEL: yum install epel-release 然后再安装ansible: sudo yum install ansible 参考资料Ansible中文权威指南  New Driver to load  新手上路TODO  参考文档 开源自动化配置管理工具ansible、saltstack、Puppet、Chef选择 </p>
+快速上手 配置存储 ansible.cfg 全局配置
+/etc/ansible/hosts 里面是远程机器的列表 # 节点集合 # NODE_NAME，NODE_IP这些都是参数，每个节点自己的参数 [deploy] 192.168.1.1 NODE_NAME=etcd1 NODE_IP=&quot;192.168.1.1&quot; 192.168.1.2 NODE_NAME=etcd2 NODE_IP=&quot;192.168.1.2&quot; 192.168.1.3 NODE_NAME=etcd3 NODE_IP=&quot;192.168.1.3&quot; [deploy:vars] #局部变量 app_dir=&quot;&quot; # ---------全局附加参数-------------------- [all:vars] bin_dir=&quot;/root/local/bin&quot;  Installation  centOS环境需要先配置EPEL: yum install epel-release 然后再安装ansible: sudo yum install ansible 参考资料Ansible中文权威指南  New Driver to load  新手上路TODO  参考文档 开源自动化配置管理工具ansible、saltstack、Puppet、Chef选择 </p>
 			</div>
 
 			<p class="meta">Posted on <span class="postdate">31. July 2017</span></p>
