@@ -6,10 +6,19 @@
     <description>Recent content on life log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Nov 2017 14:41:57 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2019 22:38:31 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interest_web</title>
+      <link>/post/2019/07/24/interest_web/</link>
+      <pubDate>Wed, 24 Jul 2019 22:38:31 +0800</pubDate>
+      
+      <guid>/post/2019/07/24/interest_web/</guid>
+      <description>有趣的网站，都有有趣的人维护 有些东西比如英语，也许不是那么难 解谜英语 false</description>
+    </item>
     
     <item>
       <title>k8s 学习</title>
