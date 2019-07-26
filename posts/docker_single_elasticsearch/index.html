@@ -1,48 +1,127 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Docker_single_elasticsearch</title>
-		<meta name="viewport" content="width=device-width">
-		
-		<link rel="stylesheet" href="https://lzqmyb.github.io/css/hybrid.css">
-		<link rel="stylesheet" href="https://lzqmyb.github.io/css/style.css">
-		<link rel="stylesheet" href="https://lzqmyb.github.io/css/colors-dark.css">
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		
-	</head>
-	<body>
-		<header id="header">
-			<h1><a href="https://lzqmyb.github.io/">life</a></h1>
-			<p>Hugo theme zozo example site.</p>
-		</header>
+  
+  <meta name="author"
+        content="lzqmyb"/>
 
-		<div id="page">
-			<div id="sidebar">
-				<nav>
-	
-		<ul class="nav">
-			
-				<li><a href="/"><span>首页</span></a></li>
-			
-				<li><a href="/posts/"><span>归档</span></a></li>
-			
-				<li><a href="/tags/"><span>标签</span></a></li>
-			
-				<li><a href="/about/"><span>关于</span></a></li>
-			
-		</ul>
-	
-</nav>
+  
+  <meta name="description" content="docker run single node elasticsearch prepare config /Users/lzq/docker/elasticsearch/es-single.yml cluster.name: &amp;quot;docker-cluster&amp;quot; network.host: 0.0.0.0 # custom config node.name: &amp;quot;node-1&amp;quot; discovery.seed_hosts: [&amp;quot;127.0.0.1&amp;quot;, &amp;quot;[::1]&amp;quot;] cluster.initial_master_nodes: [&amp;quot;node-1&amp;quot;] # 开启跨域访问支持，默认为false http.cors.enabled: true # 跨域访问允许的域名地址，(允许所有域名)以上使用正则 http.cors.allow-origin: /.*/ 重点是 node.name 和 cluster.initial_master_nodes cmd #JAVA_OPTS=&#39;-Xmx512m&#39; docker run -e ES_JAVA_OPTS=&amp;quot;-Xms256m -Xmx256m&amp;quot; -d -p 9200:9200 -p 9300:9300 -v /Users/lzq/docker/elasticsearch/es-single.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v /Users/lzq/docker/elasticsearch/esdata-single:/usr/share/elasticsearch/data --name es-single elasticsearch:7.2.0 设置-e"/>
+  
 
-			</div>
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo"/>
+  
 
-			<div id="content">
-				
-	<article class="post">
-		<h1><a href="https://lzqmyb.github.io/posts/docker_single_elasticsearch/">Docker_single_elasticsearch</a> </h1>
+  
+  <link rel="canonical" href="https://lzqmyb.github.io/posts/docker_single_elasticsearch/"/>
 
-		<div class="post-content">
+  
+
+  <title>Docker_single_elasticsearch &middot; life</title>
+
+  <link rel="shortcut icon" href="https://lzqmyb.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144679005-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144679005-1');
+</script>
+
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://lzqmyb.github.io/">
+          <span>life</span>
+          <img width="100px" height="100px" src="https://lzqmyb.github.io/images/logo.png"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://lzqmyb.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/docker_single_elasticsearch/'>Docker_single_elasticsearch</a></h2>
+          <span class="date">2019.07.25</span>
+        </div>
+        <div class="post_content markdown">
 
 <h1 id="docker-run-single-node-elasticsearch">docker run single node elasticsearch</h1>
 
@@ -83,22 +162,76 @@ docker run -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; -d -p 9200:9200 -p 9300
 <li>--name是给容器设定一个名字，名字不能重复</li>
 </ul>
 </div>
+        <div class="post_footer">
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
 
-		<p class="meta">Posted on <span class="postdate">25. July 2019</span></p>
-	</article>
+  <div class="footer_slogan">
+    <span>我的精神家园</span>
+  </div>
+</footer>
 
-			</div>
 
-			<footer id="footer">
-				<p class="copyright">
-					
-						Powered by <a href="https://gohugo.io/">Hugo</a> and the
-						<a href="https://github.com/bake/solar-theme-hugo">Solar</a>-theme.
-					
-				</p>
-			</footer>
-		</div>
 
-		
-	</body>
+<script src="https://lzqmyb.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://lzqmyb.github.io/js/zozo.js"></script>
+<script src="https://lzqmyb.github.io/js/highlight.pack.js"></script>
+<link  href="https://lzqmyb.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://lzqmyb.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
 </html>

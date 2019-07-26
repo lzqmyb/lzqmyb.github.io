@@ -1,115 +1,300 @@
 <!DOCTYPE html>
-<html>
-	<head>
+<html lang="zh-cn" >
+<head>
 	<meta name="generator" content="Hugo 0.55.5" />
-		<meta charset="utf-8">
-		<title>life</title>
-		<meta name="viewport" content="width=device-width">
-		
-			<link href="/index.xml" rel="alternate" type="application/rss+xml" title="life" />
-			<link href="/index.xml" rel="feed" type="application/rss+xml" title="life" />
-		
-		<link rel="stylesheet" href="https://lzqmyb.github.io/css/hybrid.css">
-		<link rel="stylesheet" href="https://lzqmyb.github.io/css/style.css">
-		<link rel="stylesheet" href="https://lzqmyb.github.io/css/colors-dark.css">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		
-	</head>
-	<body>
-		<header id="header">
-			<h1><a href="https://lzqmyb.github.io/">life</a></h1>
-			<p>Hugo theme zozo example site.</p>
-		</header>
+  
+  <meta name="author"
+        content="lzqmyb"/>
 
-		<div id="page">
-			<div id="sidebar">
-				<nav>
-	
-		<ul class="nav">
-			
-				<li><a href="/"><span>首页</span></a></li>
-			
-				<li><a href="/posts/"><span>归档</span></a></li>
-			
-				<li><a href="/tags/"><span>标签</span></a></li>
-			
-				<li><a href="/about/"><span>关于</span></a></li>
-			
-		</ul>
-	
-</nav>
+  
+  <meta name="description" content="Hugo theme zozo example site."/>
+  
 
-			</div>
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo"/>
+  
 
-			<div id="content">
-				
-	
-		<article class="post">
-			<h1><a href="https://lzqmyb.github.io/posts/collection/">Collection</a> </h1>
+  
+  <link rel="canonical" href="https://lzqmyb.github.io/"/>
 
-			<div class="post-content">
-				<p>体系化认识RPC </p>
-			</div>
+  
+  <link rel="alternate" type="application/rss&#43;xml" href="https://lzqmyb.github.io/index.xml">
+  
 
-			<p class="meta">Posted on <span class="postdate">19. September 2017</span></p>
-		</article>
-	
-		<article class="post">
-			<h1><a href="https://lzqmyb.github.io/posts/docker-read-mind/">第一本Docker书 笔记</a> </h1>
+  <title>life</title>
 
-			<div class="post-content">
-				<p>第一本Docker书 第一章 简介 1.1.1 提供一个简单轻量的建模方式 docker及其简洁，全部环境一台安装了肩同版本的Linux内核和二进制文件最小限的宿主机 大多数docker容器只需要不到1秒钟即可启动 由于去  … </p>
-			</div>
+  <link rel="shortcut icon" href="https://lzqmyb.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://lzqmyb.github.io/css/highlight.css"/>
 
-			<p class="meta">Posted on <span class="postdate">12. September 2017</span></p>
-		</article>
-	
-		<article class="post">
-			<h1><a href="https://lzqmyb.github.io/posts/tcp_ip/">TCP/IP详解卷 读书笔记</a> </h1>
+  
+  
+</head>
 
-			<div class="post-content">
-				<p>TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础 概述 1.2 分层 在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并  … </p>
-			</div>
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
 
-			<p class="meta">Posted on <span class="postdate">06. September 2017</span></p>
-		</article>
-	
-		<article class="post">
-			<h1><a href="https://lzqmyb.github.io/posts/ansible/">Ansible</a> </h1>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144679005-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-			<div class="post-content">
-				<p>主机环境 centOS7.2 python2.7 快速上手 配置存储 ansible.cfg 全局配置 /etc/ansible/hosts 里面是远程机器的列表 # 节点集合 # NODE_NAME，NODE_IP这些都是参数，每个节点自己的参数 [deploy] 192.168.1.1 NODE_NAME=etcd1 NODE_IP=&quot;192.168.1.1&quot; 192.168.1.2 NODE_NAME=etcd2 NODE_IP=&quot;192.168.1.2&quot; 192.168.1.3 NODE_NAME=etcd3 NODE_IP=&quot;192.168.1.3&quot; [deploy:vars] #局部变量 app_dir=&quot;&quot; # ---------全局附加  … </p>
-			</div>
+    gtag('config', 'UA-144679005-1');
+</script>
 
-			<p class="meta">Posted on <span class="postdate">31. July 2017</span></p>
-		</article>
-	
+<div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://lzqmyb.github.io/">
+          <span>life</span>
+          <img width="100px" height="100px" src="https://lzqmyb.github.io/images/logo.png"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://lzqmyb.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-	
-	<nav class="pagination" role="pagination">
-		
-			<a class="newer-posts" href="/"><span aria-hidden="true">&larr;</span> Newer Posts</a>
-		
-		<span class="page-number">Page 2 of 3</span>
-		
-			<a class="older-posts" href="/page/3/">Older Posts <span aria-hidden="true">&rarr;</span></a>
-		
-	</nav>
+  <div class="content">
+    
+
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/docker-read-mind/'>第一本Docker书 笔记</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>第一本Docker书 第一章 简介 1.1.1 提供一个简单轻量的建模方式 docker及其简洁，全部环境一台安装了肩同版本的Linux内核和二进制文件最小限的宿主机 大多数docker容器只需要不到1秒钟即可启动 由于去......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2017.09.12</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/tcp_ip/'>TCP/IP详解卷 读书笔记</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础 概述 1.2 分层 在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2017.09.06</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/ansible/'>Ansible</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>主机环境 centOS7.2 python2.7 快速上手 配置存储 ansible.cfg 全局配置 /etc/ansible/hosts 里面是远程机器的列表 # 节点集合 # NODE_NAME，NODE_IP这些都是参数，每个节点自己的参数 [deploy] 192.168.1.1 NODE_NAME=etcd1 NODE_IP=&quot;192.168.1.1&quot; 192.168.1.2 NODE_NAME=etcd2 NODE_IP=&quot;192.168.1.2&quot; 192.168.1.3 NODE_NAME=etcd3 NODE_IP=&quot;192.168.1.3&quot; [deploy:vars] #局部变量 app_dir=&quot;&quot; # ---------全局附加......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2017.07.31</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/2/'>jenkins 搭建初级</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>下载 官网下载jenkins.war包 下载java jre 配置环境变量 启动 运行java jenkins.war --httpPort=yourport 配置 问题 执行shell时会遇到权限问题 妥协了切换成root用户执行jenkins了 用普通用户是可以的，只是需要更多的时......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2017.07.25</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pagination">
+  
+  
+  <a href="/" class="pre">
+    返回上一页
+  </a>
+  
+  
+  <a href="/page/3/" class="next">
+    阅读更多文章
+  </a>
+  
+  
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>我的精神家园</span>
+  </div>
+</footer>
 
 
 
-			</div>
+<script src="https://lzqmyb.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://lzqmyb.github.io/js/zozo.js"></script>
+<script src="https://lzqmyb.github.io/js/highlight.pack.js"></script>
+<link  href="https://lzqmyb.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://lzqmyb.github.io/js/fancybox.min.js"></script>
 
-			<footer id="footer">
-				<p class="copyright">
-					
-						Powered by <a href="https://gohugo.io/">Hugo</a> and the
-						<a href="https://github.com/bake/solar-theme-hugo">Solar</a>-theme.
-					
-				</p>
-			</footer>
-		</div>
+<script>hljs.initHighlightingOnLoad()</script>
 
-		
-	</body>
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
 </html>
