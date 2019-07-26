@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Methods on life</title>
-    <link>https://example.com/method/</link>
+    <link>https://lzqmyb.github.io/method/</link>
     <description>Recent content in Methods on life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Nov 2017 17:59:22 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/method/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lzqmyb.github.io/method/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GTD 时间管理</title>
-      <link>https://example.com/method/gtd/</link>
+      <link>https://lzqmyb.github.io/method/gtd/</link>
       <pubDate>Mon, 13 Nov 2017 17:59:22 +0800</pubDate>
       
-      <guid>https://example.com/method/gtd/</guid>
+      <guid>https://lzqmyb.github.io/method/gtd/</guid>
       <description>时间管理</description>
     </item>
     

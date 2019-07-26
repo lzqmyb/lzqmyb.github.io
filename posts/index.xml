@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on life</title>
-    <link>https://example.com/posts/</link>
+    <link>https://lzqmyb.github.io/posts/</link>
     <description>Recent content in Posts on life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 25 Jul 2019 21:35:03 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lzqmyb.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker_single_elasticsearch</title>
-      <link>https://example.com/posts/docker_single_elasticsearch/</link>
+      <link>https://lzqmyb.github.io/posts/docker_single_elasticsearch/</link>
       <pubDate>Thu, 25 Jul 2019 21:35:03 +0800</pubDate>
       
-      <guid>https://example.com/posts/docker_single_elasticsearch/</guid>
+      <guid>https://lzqmyb.github.io/posts/docker_single_elasticsearch/</guid>
       <description>docker run single node elasticsearch prepare config /Users/lzq/docker/elasticsearch/es-single.yml cluster.name: &amp;quot;docker-cluster&amp;quot; network.host: 0.0.0.0 # custom config node.name: &amp;quot;node-1&amp;quot; discovery.seed_hosts: [&amp;quot;127.0.0.1&amp;quot;, &amp;quot;[::1]&amp;quot;] cluster.initial_master_nodes: [&amp;quot;node-1&amp;quot;] # 开启跨域访问支持，默认为false http.cors.enabled: true # 跨域访问允许的域名地址，(允许所有域名)以上使用正则 http.cors.allow-origin: /.*/ 重点是 node.name 和 cluster.initial_master_nodes cmd #JAVA_OPTS=&#39;-Xmx512m&#39; docker run -e ES_JAVA_OPTS=&amp;quot;-Xms256m -Xmx256m&amp;quot; -d -p 9200:9200 -p 9300:9300 -v /Users/lzq/docker/elasticsearch/es-single.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v /Users/lzq/docker/elasticsearch/esdata-single:/usr/share/elasticsearch/data --name es-single elasticsearch:7.2.0 设置-e</description>
     </item>
     
     <item>
       <title>Interest_web</title>
-      <link>https://example.com/posts/interest_web/</link>
+      <link>https://lzqmyb.github.io/posts/interest_web/</link>
       <pubDate>Wed, 24 Jul 2019 22:38:31 +0800</pubDate>
       
-      <guid>https://example.com/posts/interest_web/</guid>
+      <guid>https://lzqmyb.github.io/posts/interest_web/</guid>
       <description>有趣的网站，都有有趣的人维护 有些东西比如英语，也许不是那么难 解谜英语 英语的诀窍： - 动词是关键，每个动词都是有使用模板的 - 解析语句，树型分析法 - 创建语句，先弄骨架，再每一部分增加修饰</description>
     </item>
     
     <item>
       <title>k8s 学习</title>
-      <link>https://example.com/posts/k8s/</link>
+      <link>https://lzqmyb.github.io/posts/k8s/</link>
       <pubDate>Wed, 15 Nov 2017 14:41:57 +0800</pubDate>
       
-      <guid>https://example.com/posts/k8s/</guid>
+      <guid>https://lzqmyb.github.io/posts/k8s/</guid>
       <description>概念 kube-dns 解决的问题 不是kubernetes中必须安装的，但是推荐安装 虽然kubernetes中有service的概念，访问服务可以访问端口， 但是如果是一个app，一个db， 链接db时需要通过增加app查</description>
     </item>
     
     <item>
       <title>Collection</title>
-      <link>https://example.com/posts/collection/</link>
+      <link>https://lzqmyb.github.io/posts/collection/</link>
       <pubDate>Tue, 19 Sep 2017 13:42:46 +0800</pubDate>
       
-      <guid>https://example.com/posts/collection/</guid>
+      <guid>https://lzqmyb.github.io/posts/collection/</guid>
       <description>体系化认识RPC</description>
     </item>
     
     <item>
       <title>第一本Docker书 笔记</title>
-      <link>https://example.com/posts/docker-read-mind/</link>
+      <link>https://lzqmyb.github.io/posts/docker-read-mind/</link>
       <pubDate>Tue, 12 Sep 2017 13:42:46 +0800</pubDate>
       
-      <guid>https://example.com/posts/docker-read-mind/</guid>
+      <guid>https://lzqmyb.github.io/posts/docker-read-mind/</guid>
       <description>第一本Docker书 第一章 简介 1.1.1 提供一个简单轻量的建模方式 docker及其简洁，全部环境一台安装了肩同版本的Linux内核和二进制文件最小限的宿主机 大多数docker容器只需要不到1秒钟即可启动 由于去</description>
     </item>
     
     <item>
       <title>TCP/IP详解卷 读书笔记</title>
-      <link>https://example.com/posts/tcp_ip/</link>
+      <link>https://lzqmyb.github.io/posts/tcp_ip/</link>
       <pubDate>Wed, 06 Sep 2017 11:37:42 +0800</pubDate>
       
-      <guid>https://example.com/posts/tcp_ip/</guid>
+      <guid>https://lzqmyb.github.io/posts/tcp_ip/</guid>
       <description>TCP/IP详解卷 读书笔记 为什么要看 这是互联网的基础，web开发者基础 概述 1.2 分层 在 T C P / I P 协议族中,网络层 I P 提 供 的 是 一 种 不 可 靠 的 服 务 。 也 就 是 说 , 它 只 是 尽 可 能 快 地把分组从源结点送到目的结点,但是并</description>
     </item>
     
     <item>
       <title>Ansible</title>
-      <link>https://example.com/posts/ansible/</link>
+      <link>https://lzqmyb.github.io/posts/ansible/</link>
       <pubDate>Mon, 31 Jul 2017 13:42:46 +0800</pubDate>
       
-      <guid>https://example.com/posts/ansible/</guid>
+      <guid>https://lzqmyb.github.io/posts/ansible/</guid>
       <description>主机环境 centOS7.2 python2.7 快速上手 配置存储 ansible.cfg 全局配置 /etc/ansible/hosts 里面是远程机器的列表 # 节点集合 # NODE_NAME，NODE_IP这些都是参数，每个节点自己的参数 [deploy] 192.168.1.1 NODE_NAME=etcd1 NODE_IP=&amp;quot;192.168.1.1&amp;quot; 192.168.1.2 NODE_NAME=etcd2 NODE_IP=&amp;quot;192.168.1.2&amp;quot; 192.168.1.3 NODE_NAME=etcd3 NODE_IP=&amp;quot;192.168.1.3&amp;quot; [deploy:vars] #局部变量 app_dir=&amp;quot;&amp;quot; # ---------全局附加</description>
     </item>
     
     <item>
       <title>jenkins 搭建初级</title>
-      <link>https://example.com/posts/2/</link>
+      <link>https://lzqmyb.github.io/posts/2/</link>
       <pubDate>Tue, 25 Jul 2017 11:09:51 +0800</pubDate>
       
-      <guid>https://example.com/posts/2/</guid>
+      <guid>https://lzqmyb.github.io/posts/2/</guid>
       <description>下载 官网下载jenkins.war包 下载java jre 配置环境变量 启动 运行java jenkins.war --httpPort=yourport 配置 问题 执行shell时会遇到权限问题 妥协了切换成root用户执行jenkins了 用普通用户是可以的，只是需要更多的时</description>
     </item>
     
     <item>
       <title>It&#39;s time to sleep</title>
-      <link>https://example.com/posts/1/</link>
+      <link>https://lzqmyb.github.io/posts/1/</link>
       <pubDate>Sun, 23 Jul 2017 23:16:57 +0800</pubDate>
       
-      <guid>https://example.com/posts/1/</guid>
+      <guid>https://lzqmyb.github.io/posts/1/</guid>
       <description>明天一定是一个起舞的日子</description>
     </item>
     
     <item>
       <title>Linux查看系统架构的5条常用命令</title>
-      <link>https://example.com/posts/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://lzqmyb.github.io/posts/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://lzqmyb.github.io/posts/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description></description>
     </item>
     
