@@ -6,10 +6,19 @@
     <description>Recent content in Posts on life log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jul 2019 22:38:31 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 21:35:03 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker_single_elasticsearch</title>
+      <link>/post/2019/07/25/docker_single_elasticsearch/</link>
+      <pubDate>Thu, 25 Jul 2019 21:35:03 +0800</pubDate>
+      
+      <guid>/post/2019/07/25/docker_single_elasticsearch/</guid>
+      <description> docker run single node elasticsearch prepare config /Users/lzq/docker/elasticsearch/es-single.yml cluster.name: &amp;quot;docker-cluster&amp;quot; network.host: 0.0.0.0 # custom config node.name: &amp;quot;node-1&amp;quot; discovery.seed_hosts: [&amp;quot;127.0.0.1&amp;quot;, &amp;quot;[::1]&amp;quot;] cluster.initial_master_nodes: [&amp;quot;node-1&amp;quot;] # 开启跨域访问支持，默认为false http.cors.enabled: true # 跨域访问允许的域名地址，(允许所有域名)以上使用正则 http.cors.allow-origin: /.*/   重点是 node.name 和 cluster.initial_master_nodes  cmd #JAVA_OPTS=&#39;-Xmx512m&#39; docker run -e JAVA_OPTS=&amp;quot;-Xms256m -Xmx256m&amp;quot; -d -p 9200:9200 -p 9300:9300 -v /Users/lzq/docker/elasticsearch/es-single.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v /Users/lzq/docker/elasticsearch/esdata-single:/usr/share/elasticsearch/data --name es-single elasticsearch:7.2.0   设置-e ES_JAVA_OPTS=&amp;ldquo;-Xms256m -Xmx256m&amp;rdquo; 是因为/etc/elasticsearch/jvm.options 默认jvm最大最小内存是2G，读者启动容器后 可用docker stats命令查看 -p是绑定端口，请保持9200:9200前后一致 -v是做文件映射，当前主机的文件映射到docker内部 &amp;ndash;name是给容器设定一个名字，名字不能重复  </description>
+    </item>
     
     <item>
       <title>Interest_web</title>
