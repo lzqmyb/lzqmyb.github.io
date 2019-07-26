@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>k8s 学习</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<link rel="stylesheet" href="https://example.comcss/hybrid.css">
+		<link rel="stylesheet" href="https://example.comcss/style.css">
+		<link rel="stylesheet" href="https://example.comcss/colors-dark.css">
+
+		
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="https://example.com">life</a></h1>
+			<p>Hugo theme zozo example site.</p>
+		</header>
+
+		<div id="page">
+			<div id="sidebar">
+				<nav>
+	
+		<ul class="nav">
+			
+				<li><a href="/"><span>首页</span></a></li>
+			
+				<li><a href="/posts/"><span>归档</span></a></li>
+			
+				<li><a href="/tags/"><span>标签</span></a></li>
+			
+				<li><a href="/about/"><span>关于</span></a></li>
+			
+		</ul>
+	
+</nav>
+
+			</div>
+
+			<div id="content">
+				
+	<article class="post">
+		<h1><a href="https://example.com/posts/k8s/">k8s 学习</a> </h1>
+
+		<div class="post-content">
+
+<h1 id="概念">概念</h1>
+
+<h2 id="kube-dns">kube-dns</h2>
+
+<ul>
+<li>解决的问题</li>
+</ul>
+
+<pre><code class="language-text">不是kubernetes中必须安装的，但是推荐安装
+
+虽然kubernetes中有service的概念，访问服务可以访问端口，
+但是如果是一个app，一个db，
+链接db时需要通过增加app查询ip的能力，需要重复的开发，修改应用
+
+刚开始的做法采用了docker使用过的方法--环境变量。
+每个pod启动时，会通过环境变量设置所有服务的ip与port，
+这样pod中的应用可以启动时，读取环境变量来获取依赖服务的地址信息
+，但是，一个问题是，必须依赖服务先启动才可以正常使用
+
+最理想的方案就是直接使用服务的名字，不需要关心它实际的ip，即dns系统。
+kubernetes 也提供了这种功能
+
+</code></pre>
+
+<ul>
+<li>存在的形态</li>
+</ul>
+
+<p>DNS服务不是独立的系统，是一种
+<a href="https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns">addon</a>
+作为插件来安装，可以把它看做运行在集群上的应用。</p>
+
+<p>DNS 有两种配置方式:
+ - 在1.3之前使用 etcd + kube2sky + skydns 的方式</p>
+
+<p>会有三个容器运行:</p>
+
+<p>etcd: 保存所有DNS数据</p>
+
+<p>kube2sky: 通过kubernetes API 监听 Service 的变化， 然后同步到 etcd</p>
+
+<p>skyDNS: 根据etcd中的数据，对外提供DNS查询服务</p>
+
+<ul>
+<li>在1.3之后可以使用 kubedns + dnsmasq 的方式</li>
+</ul>
+
+<p>kubedns: 提供原来kube2sky + etcd + skyDNS 的功能，可以单独对外提供DNS查询服务</p>
+
+<p>dnsmasq: 轻量级的DNS服务软件， 可以提供DNS缓存功能。
+ kubeDNS模式下，dnsmasq正在内存这种预留一块大小1G（默认）的地方，保存当前最常用的DNS查询记录，
+ 如果缓存中没有要查找的记录，就会到kubeDNS中查询，并把结果缓存起来.</p>
+
+<h1 id="离线安装">离线安装</h1>
+
+<h2 id="环境">环境</h2>
+
+<ul>
+<li>vagrant 虚拟三台机器</li>
+<li>centos7.2</li>
+</ul>
+
+<h2 id="步骤">步骤</h2>
+
+<ol>
+<li>指定gcr.io的host，如果不指定需要手动下载google-containers</li>
+</ol>
+
+<pre><code class="language-bash"> 61.91.161.217 google.com
+ 61.91.161.217 gcr.io
+ 61.91.161.217 www.gcr.io
+ 61.91.161.217 console.cloud.google.com
+ 61.91.161.217 storage.googleapis.com
+</code></pre>
+
+<ol>
+<li>关闭防火墙</li>
+</ol>
+
+<pre><code class="language-bash">$ vi /etc/selinux/config
+SELINUX=permissive
+
+$ setenforce 0
+$ getenforce
+Ppermission
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+</code></pre>
+
+<ol>
+<li>Docker会随着kubernetes安装，删除本地docker</li>
+</ol>
+
+<pre><code class="language-bash">$ yum list installed | docker
+$ yum remove -y docekr-engine.x86_64 docekr-engine-selinux.noarch
+
+</code></pre>
+
+<ol>
+<li>开始安装kubernetes,离线源采用cbs.centos.org/repos/$tag/x86_64/os/Packages/  tag=virt7-docker-common-candidate</li>
+</ol>
+
+<pre><code class="language-bash"># 删除本机repo
+$ rm -rf /etc/yum.repos.d/$tag.repo
+$ yum install -y createrepo
+$ mkdir -p /data/softs/localyum 将下载的软件全部放入该文件夹内
+$ createrepo -v /data/softs/localyum
+
+# enable=1 表示启用这个更新库
+# gpgcheck=1 表示使用gpg文件检查软件包签名
+# gpgkey= 表示gpg文件所在位置，此处也可以有http方式的位置
+$ cat &lt;&lt; EOF &gt;&gt; /etc/yum.repos.d/local.repo
+[local]
+name=local
+baseurl=file:///data/softs/localyum
+enable=1
+gpgcheck=0 
+EOF
+$ yum clean all
+$ yum makecache
+$ yum install -y kubernetes flannel etcd
+</code></pre>
+
+<ol>
+<li>配置docker</li>
+</ol>
+
+<pre><code class="language-bash"># 修改docker配置 sed -i:改变输入文件 -r:使用正则表达式
+$ rm -rf /etc/systemd/system/docker.service.d/docker.conf
+$ cat /usr/lib/systemd/system/docker.service
+[Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.com
+After=network.target docker-containerd.service
+Wants=docker-storage-setup.service
+Requires=docker-containerd.service rhel-push-plugin.socket
+
+[Service]
+Type=notify
+EnvironmentFile=-/etc/sysconfig/docker
+EnvironmentFile=-/etc/sysconfig/docker-storage
+EnvironmentFile=-/etc/sysconfig/docker-network
+Environment=GOTRACEBACK=crash
+ExecStart=/usr/bin/dockerd-current \
+          --add-runtime oci=/usr/libexec/docker/docker-runc-current \
+          --default-runtime=oci \
+          --authorization-plugin=rhel-push-plugin \
+          --containerd /run/containerd.sock \
+          --exec-opt native.cgroupdriver=systemd \
+          --userland-proxy-path=/usr/libexec/docker/docker-proxy-current \
+          $OPTIONS \
+          $DOCKER_STORAGE_OPTIONS \
+          $DOCKER_NETWORK_OPTIONS \
+          $ADD_REGISTRY \
+          $BLOCK_REGISTRY \
+          $INSECURE_REGISTRY
+ExecReload=/bin/kill -s HUP $MAINPID
+LimitNOFILE=1048576
+LimitNPROC=1048576
+LimitCORE=infinity
+TimeoutStartSec=0
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
+
+$ sed -ir 's/^OPTION.*/OPTIONS=''&quot;'&quot;'--selinux-enabled --log-driver=journald --graph=\/data\/env\/docker --insecure-registry master:5000'&quot;'&quot;'/' /etc/sysconfig/docker
+$ mkdir -p /data/env/docker
+$ systemctl enable docker &amp;&amp; systemctl restart docker 
+# 查询docker状态
+$ systemctl status docker
+
+</code></pre>
+
+<ol>
+<li>配置kubernetes</li>
+</ol>
+
+<pre><code class="language-bash"># 备份kubernetes配置
+$ mv /etc/kubernetes/config /etc/kubernetes/config.bak
+$ vi /etc/kubernetes/config
+KUBE_ETCD_SERVERS=&quot;--etcd-servers=http://kubemaster:2379&quot;
+KUBE_LOGTOSTDERR=&quot;--logtostderr=true&quot;
+KUBE_LOG_LEVEL=&quot;--v=0&quot;
+KUBE_ALLOW_PRIV=&quot;--allow-privileged=false&quot;
+KUBE_MASTER=&quot;--master=http://kubemaster:8080&quot;
+
+</code></pre>
+
+<ol>
+<li>master 配置etcd, kubernetes, flanneld, kube-apiserver， kube-controller-manager, kube-scheduler</li>
+</ol>
+
+<pre><code class="language-bash">$ mv /etc/etcd/etcd.conf /etc/etcd/etcd.conf.bak
+$ vi /etc/etcd/etcd.conf
+# [member]
+ETCD_NAME=default
+ETCD_DATA_DIR=&quot;/var/lib/etcd/default.etcd&quot;
+ETCD_LISTEN_CLIENT_URLS=&quot;http://0.0.0.0:2379&quot;
+
+#[cluster]
+ETCD_ADVERTISE_CLIENT_URLS=&quot;http://0.0.0.0:2379&quot;
+
+$ mv /etc/kubernetes/apiserver /etc/kubernetes/apiserver.bak
+$ vi /etc/kubernetes/apiserver
+# The address on the local server to listen to.
+KUBE_API_ADDRESS=&quot;--address=0.0.0.0&quot;
+
+# The port on the local server to listen on.
+KUBE_API_PORT=&quot;--port=8080&quot;
+
+# Port kubelets listen on
+KUBELET_PORT=&quot;--kubelet-port=10250&quot;
+
+# Address range to use for services
+KUBE_SERVICE_ADDRESSES=&quot;--service-cluster-ip-range=10.254.0.0/16&quot;
+KUBE_ETCD_SERVERS=&quot;--etcd-servers=http://127.0.0.1:2379&quot;
+KUBE_ADMISSION_CONTROL=&quot;--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota&quot;
+
+# Add your own!
+KUBE_API_ARGS=&quot;&quot;
+
+$ systemctl start etcd
+$ etcdctl mkdir /kube-centos/network
+$ etcdctl mk /kube-centos/network/config &quot;{ \&quot;Network\&quot;: \&quot;172.30.0.0/16\&quot;, \&quot;SubnetLen\&quot;: 24, \&quot;Backend\&quot;: { \&quot;Type\&quot;: \&quot;vxlan\&quot; } }&quot; 
+{ &quot;Network&quot;: &quot;172.30.0.0/16&quot;, &quot;SubnetLen&quot;: 24, &quot;Backend&quot;: { &quot;Type&quot;: &quot;vxlan&quot; } }
+
+$ mv /etc/sysconfig/flanneld/ /etc/sysconfig/flanneld.bak
+$ vi /etc/sysconfig/flanneld
+# Flanneld configuration options
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS=&quot;http://kubemaster:2379&quot;
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX=&quot;/kube-centos/network&quot;
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=&quot;&quot;
+
+$ for SERVICES in etcd kube-apiserver kube-controller-manager kube-cheduler flanneld; do
+  systemctl restart $SERVICES
+  systemctl enable $SERVICES
+  systemctl status $SERVICES
+done
+</code></pre>
+
+<ol>
+<li>node节点上配置kubernetes(every node)</li>
+</ol>
+
+<pre><code class="language-bash">$ mv /etc/kubernetes/kubelet /etc/kubernetes/kubelet.bak
+$ vi /etc/kubernetes/kubelet 
+# The address for the info server to serve on
+KUBELET_ADDRESS=&quot;--address=0.0.0.0&quot;
+
+# The port for the info server to serve on
+KUBELET_PORT=&quot;--port=10250&quot;
+
+# You may leave this blank to use the actual hostname
+# Check the node number!
+KUBELET_HOSTNAME=&quot;--hostname-override=kubenode0&quot;
+
+# Location of the api-server
+KUBELET_API_SERVER=&quot;--api-servers=http://kubemaster:8080&quot;
+
+# Add your own!
+KUBELET_ARGS=&quot;&quot;
+</code></pre>
+
+<ol>
+<li>node节点上配置flanneld</li>
+</ol>
+
+<pre><code class="language-bash">$ mv /etc/sysconfig/flanneld /etc/sysconfig/flanneld.bak
+$ vi /etc/sysconfig/flanneld
+# Flanneld configuration options
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS=&quot;http://kubemaster:2379&quot;
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX=&quot;/kube-centos/network&quot;
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=&quot;&quot;
+
+</code></pre>
+
+<ol>
+<li>node节点上启动服务</li>
+</ol>
+
+<pre><code class="language-bash">$ for SERVICES in kube-proxy kubelet flanneld docker; do
+  systemctl restart $SERVICES
+  systemctl enable $SERVICES
+  systemctl status $SERVICES
+done
+
+$ ps -ef | grep kube
+root       2976      1  3 15:10 ?        00:00:00 /usr/bin/kube-proxy --logtostderr=true --v=0 --master=http://kubemaster:8080
+root       3063      1  0 15:10 ?        00:00:00 /usr/bin/flanneld -etcd-endpoints=http://kubemaster:2379 -etcd-prefix=/kube-centos/network
+root       3214      1  5 15:10 ?        00:00:00 /usr/bin/kubelet --logtostderr=true --v=0 --api-servers=http://kubemaster:8080 --address=0.0.0.0 --port=10250 --hostname-override=kubenode0 --allow-privileged=false
+root       3357   2569  0 15:10 pts/0    00:00:00 grep --color=auto kube
+
+# Configure kubectl 
+$ kubectl config set-cluster default-cluster --server=http://kubemaster:8080
+$ kubectl config set-context default-context --cluster=default-cluster  --user=default-admin
+$ kubectl config use-context default-context
+
+</code></pre>
+
+<ol>
+<li>查看集群状态</li>
+</ol>
+
+<pre><code class="language-bash">$ kubectl cluster-info
+Kubernetes master is running at http://localhost:8080
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+$ kubectl get deployment --namespace=kube-system
+No resources found.
+
+# exec every machine useful
+$ kubectl get nodes
+NAME        STATUS    AGE
+kubenode0   Ready     4m
+kubenode1   Ready     2m
+
+$ kubectl version
+Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;5&quot;, GitVersion:&quot;v1.5.2&quot;, GitCommit:&quot;08e099554f3c31f6e6f07b448ab3ed78d0520507&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-01-19T19:39:41Z&quot;, GoVersion:&quot;go1.7.4&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;5&quot;, GitVersion:&quot;v1.5.2&quot;, GitCommit:&quot;08e099554f3c31f6e6f07b448ab3ed78d0520507&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-01-19T19:39:41Z&quot;, GoVersion:&quot;go1.7.4&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+
+
+现在你可以用windows访问：http://192.168.1.158:8080/api/:
+{
+  &quot;kind&quot;: &quot;APIVersions&quot;,
+  &quot;versions&quot;: [
+    &quot;v1&quot;
+  ],
+  &quot;serverAddressByClientCIDRs&quot;: [
+    {
+      &quot;clientCIDR&quot;: &quot;0.0.0.0/0&quot;,
+      &quot;serverAddress&quot;: &quot;192.168.1.158:6443&quot;
+    }
+  ]
+}
+
+访问https://192.168.1.158:6443/api:
+
+{
+  &quot;kind&quot;: &quot;APIVersions&quot;,
+  &quot;versions&quot;: [
+    &quot;v1&quot;
+  ],
+  &quot;serverAddressByClientCIDRs&quot;: [
+    {
+      &quot;clientCIDR&quot;: &quot;0.0.0.0/0&quot;,
+      &quot;serverAddress&quot;: &quot;192.168.1.158:6443&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h1 id="参考资料">参考资料</h1>
+
+<p><a href="http://cizixs.com/2017/04/11/kubernetes-intro-kube-dns">kubernetes 简介：kube-dns 和服务发现</a></p>
+
+<p>#tomorrow continue</p>
+
+<h1 id="遇到问题">遇到问题</h1>
+
+<ul>
+<li>​</li>
+</ul>
+</div>
+
+		<p class="meta">Posted on <span class="postdate">15. November 2017</span></p>
+	</article>
+
+			</div>
+
+			<footer id="footer">
+				<p class="copyright">
+					
+						Powered by <a href="https://gohugo.io/">Hugo</a> and the
+						<a href="https://github.com/bake/solar-theme-hugo">Solar</a>-theme.
+					
+				</p>
+			</footer>
+		</div>
+
+		
+	</body>
+</html>

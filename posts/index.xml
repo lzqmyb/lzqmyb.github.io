@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>life</title>
-    <link>https://example.com/</link>
-    <description>Recent content on life</description>
+    <title>Posts on life</title>
+    <link>https://example.com/posts/</link>
+    <description>Recent content in Posts on life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 25 Jul 2019 21:35:03 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -36,15 +36,6 @@
       
       <guid>https://example.com/posts/k8s/</guid>
       <description>概念 kube-dns 解决的问题 不是kubernetes中必须安装的，但是推荐安装 虽然kubernetes中有service的概念，访问服务可以访问端口， 但是如果是一个app，一个db， 链接db时需要通过增加app查</description>
-    </item>
-    
-    <item>
-      <title>GTD 时间管理</title>
-      <link>https://example.com/method/gtd/</link>
-      <pubDate>Mon, 13 Nov 2017 17:59:22 +0800</pubDate>
-      
-      <guid>https://example.com/method/gtd/</guid>
-      <description>时间管理</description>
     </item>
     
     <item>

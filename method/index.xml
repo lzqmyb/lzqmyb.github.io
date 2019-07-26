@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Methods on life log</title>
-    <link>/method/</link>
-    <description>Recent content in Methods on life log</description>
+    <title>Methods on life</title>
+    <link>https://example.com/method/</link>
+    <description>Recent content in Methods on life</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Nov 2017 17:59:22 +0800</lastBuildDate>
     
-	<atom:link href="/method/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/method/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GTD 时间管理</title>
-      <link>/method/gtd/</link>
+      <link>https://example.com/method/gtd/</link>
       <pubDate>Mon, 13 Nov 2017 17:59:22 +0800</pubDate>
       
-      <guid>/method/gtd/</guid>
-      <description> 时间管理 </description>
+      <guid>https://example.com/method/gtd/</guid>
+      <description>时间管理</description>
     </item>
     
   </channel>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>GTD 时间管理</title>
+		<title>jenkins 搭建初级</title>
 		<meta name="viewport" content="width=device-width">
 		
 		<link rel="stylesheet" href="https://example.comcss/hybrid.css">
@@ -40,14 +40,46 @@
 			<div id="content">
 				
 	<article class="post">
-		<h1><a href="https://example.com/method/gtd/">GTD 时间管理</a> </h1>
+		<h1><a href="https://example.com/posts/2/">jenkins 搭建初级</a> </h1>
 
 		<div class="post-content">
 
-<h1 id="时间管理">时间管理</h1>
+<h1 id="下载">下载</h1>
+
+<ul>
+<li>官网下载<a href="http://updates.jenkins-ci.org/download/war/">jenkins.war</a>包</li>
+<li>下载java jre 配置环境变量</li>
+</ul>
+
+<h1 id="启动">启动</h1>
+
+<ul>
+<li>运行java jenkins.war --httpPort=yourport</li>
+</ul>
+
+<h1 id="配置">配置</h1>
+
+<h2 id="问题">问题</h2>
+
+<ul>
+<li><p>执行shell时会遇到权限问题</p>
+
+<ul>
+<li>妥协了切换成root用户执行jenkins了</li>
+<li>用普通用户是可以的，只是需要更多的时间，失了耐心</li>
+</ul></li>
+
+<li><p>插件列表中的插件太新，不能兼容老旧的gitlab</p></li>
+
+<li><p>上传插件遇到Nginx 上传文件过大的问题</p>
+
+<ul>
+<li>通过在 <a href="http://updates.jenkins-ci.org/download/plugins/">jenkins插件下载</a> 中下载插件到服务器的jenkins/plugins目录下重启jenkins,插件安装成功</li>
+</ul></li>
+</ul>
 </div>
 
-		<p class="meta">Posted on <span class="postdate">13. November 2017</span></p>
+		<p class="meta">Posted on <span class="postdate">25. July 2017</span></p>
 	</article>
 
 			</div>
