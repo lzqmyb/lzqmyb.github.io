@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://lzqmyb.github.io/posts/pits/gigment/</loc>
-    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://lzqmyb.github.io/posts/</loc>
     <lastmod>2019-07-27T15:07:14+08:00</lastmod>
     <priority>0</priority>
@@ -29,6 +24,11 @@
     <loc>https://lzqmyb.github.io/tags/pit/</loc>
     <lastmod>2019-07-27T15:07:14+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzqmyb.github.io/posts/pits/gigment/</loc>
+    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
   </url>
   
   <url>
