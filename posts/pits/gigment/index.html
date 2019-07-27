@@ -10,7 +10,7 @@
         content="lzqmyb"/>
 
   
-  <meta name="description" content="Hugo theme zozo example site."/>
+  <meta name="description" content="博客接入gitment(评论)遇到的坑 gitment 接入需要在每个页面中引入js与css，gitment官方文档提供的配置，会弹框报Object ProgressEvent gitment号称不需要后端配置直接可用，但是貌似这个引入的js需"/>
   
 
   
@@ -19,13 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://lzqmyb.github.io/tags/"/>
+  <link rel="canonical" href="https://lzqmyb.github.io/posts/pits/gigment/"/>
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://lzqmyb.github.io/tags/index.xml">
-  
 
-  <title>Tags &middot; life</title>
+  <title>Gigment &middot; life</title>
 
   <link rel="shortcut icon" href="https://lzqmyb.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://lzqmyb.github.io/css/animate.min.css"/>
@@ -117,21 +115,85 @@
 </div>
 
   <div class="content">
-    <div class="page_tags">
-      <ul>
-        
-        
-        
-        <li>
-          <a href="https://lzqmyb.github.io/tags/pit">
-            pit <span class="terms_count">1</span>
-          </a>
-        </li>
-        
-        
-      </ul>
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/pits/gigment/'>Gigment</a></h2>
+          <span class="date">2019.07.27</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="博客接入gitment-评论-遇到的坑">博客接入gitment(评论)遇到的坑</h1>
+
+<hr />
+
+<p>gitment 接入需要在每个页面中引入js与css，<a href="https://github.com/imsun/gitment">gitment官方文档</a>提供的配置，会弹框报Object ProgressEvent<br />
+gitment号称不需要后端配置直接可用，但是貌似这个引入的js需要一个远程server才行，官方的应该是这个server不能用才会报错</p>
+
+<pre><code class="language-html">&lt;!--官方配置--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://imsun.github.io/gitment/style/default.css&quot;&gt;
+&lt;script src=&quot;https://imsun.github.io/gitment/dist/gitment.browser.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>使用gitment的<a href="https://github.com/imsun/gitment/issues/104">issue</a>中的汉化版的方案可解决</p>
+
+<pre><code class="language-html">&lt;!--issue中汉化配置--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://billts.site/extra_css/gitment.css&quot;&gt;
+&lt;script src=&quot;https://billts.site/js/gitment.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://lzqmyb.github.io/tags/pit/">pit</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+      
+<div class="doc_comments">
+  <div class="comments_block_title">发表评论</div>
+  <div id="vcomments"></div>
+</div>
+
+
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+const gitment = new Gitment({
+    id: 'Gigment', 
+    owner: 'lzqmyb',
+    repo: 'lzqmyb.github.io',
+    oauth: {
+        client_id: '3a4d2f8768ea3be48a92',
+        client_secret: '22a8ce60710fc60d34a6357f069e22080f0a8e38',
+    },
+    
+    
+})
+
+document.body.appendChild(gitment.render())
+</script>
+
+      
     </div>
-    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>

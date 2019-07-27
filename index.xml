@@ -6,10 +6,19 @@
     <description>Recent content on life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Jul 2019 21:35:03 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jul 2019 15:07:14 +0800</lastBuildDate>
     
 	<atom:link href="https://lzqmyb.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gigment</title>
+      <link>https://lzqmyb.github.io/posts/pits/gigment/</link>
+      <pubDate>Sat, 27 Jul 2019 15:07:14 +0800</pubDate>
+      
+      <guid>https://lzqmyb.github.io/posts/pits/gigment/</guid>
+      <description>博客接入gitment(评论)遇到的坑 gitment 接入需要在每个页面中引入js与css，gitment官方文档提供的配置，会弹框报Object ProgressEvent gitment号称不需要后端配置直接可用，但是貌似这个引入的js需</description>
+    </item>
     
     <item>
       <title>Docker_single_elasticsearch</title>

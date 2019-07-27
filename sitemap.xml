@@ -3,20 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://lzqmyb.github.io/posts/docker_single_elasticsearch/</loc>
-    <lastmod>2019-07-25T21:35:03+08:00</lastmod>
+    <loc>https://lzqmyb.github.io/posts/pits/gigment/</loc>
+    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://lzqmyb.github.io/posts/</loc>
-    <lastmod>2019-07-25T21:35:03+08:00</lastmod>
+    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzqmyb.github.io/tags/</loc>
+    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lzqmyb.github.io/</loc>
-    <lastmod>2019-07-25T21:35:03+08:00</lastmod>
+    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzqmyb.github.io/tags/pit/</loc>
+    <lastmod>2019-07-27T15:07:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzqmyb.github.io/posts/docker_single_elasticsearch/</loc>
+    <lastmod>2019-07-25T21:35:03+08:00</lastmod>
   </url>
   
   <url>
@@ -77,11 +94,6 @@
   
   <url>
     <loc>https://lzqmyb.github.io/posts/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E7%9A%845%E6%9D%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-  </url>
-  
-  <url>
-    <loc>https://lzqmyb.github.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
