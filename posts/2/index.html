@@ -163,6 +163,40 @@
       </div>
       
       
+      
+<div class="doc_comments">
+  <div class="comments_block_title">发表评论</div>
+  <div id="vcomments"></div>
+</div>
+
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+const gitment = new Gitment({
+    id: 'jenkins 搭建初级', 
+    owner: 'lzqmyb',
+    repo: 'lzqmyb.github.io',
+    oauth: {
+        client_id: '3a4d2f8768ea3be48a92',
+        client_secret: '22a8ce60710fc60d34a6357f069e22080f0a8e38',
+    },
+    
+    
+})
+
+document.body.appendChild(gitment.render())
+</script>
+
+      
     </div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
